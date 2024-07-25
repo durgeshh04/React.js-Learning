@@ -1,3 +1,5 @@
+// List Rendering- from NameList.jsx component to PersonList.jsx component
+
 import React from "react";
 import PersonList from "./PersonList";
 

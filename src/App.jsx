@@ -6,6 +6,14 @@ import SetState from "./components/SetState";
 import Parent from "./components/Parent";
 import ConditionalRendering from "./components/ConditionalRendering";
 import NameList from "./components/NameList";
+// import StylesInReact from "./components/StylesInReact";
+import styles from "./CSS_Style.module.css";
+
+
+
+
+
+
 
 function App() {
   // Basic understanding of how to send props to the component
@@ -54,7 +62,12 @@ function App() {
         {/* <ConditionalRendering /> */}
 
         {/* List Rendering */}
-        <NameList />
+        {/* <NameList /> */}
+
+        {/* Styles in React */}
+        {/* <StylesInReact /> */}
+        {/* Css Modules */}
+        <h1 className={styles.success}>Success</h1>
       </div>
     </>
   );

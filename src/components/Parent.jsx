@@ -1,3 +1,5 @@
+// Method as a prop to Child.jsx component - parent to child
+
 import React, { useState } from "react";
 import Child from "./Child";
 

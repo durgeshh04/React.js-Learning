@@ -1,3 +1,5 @@
+// Receiving method as prop from Parent.jsx component
+
 import React from "react";
 
 const Child = ({generateName }) => {

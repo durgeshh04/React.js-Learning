@@ -1,3 +1,5 @@
+// List Rendering- Printing person list by receiving json from NameList.jsx
+
 import React from "react";
 
 const PersonList = ({ person}) => {
