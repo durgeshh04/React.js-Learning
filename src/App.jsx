@@ -8,13 +8,12 @@ import ConditionalRendering from "./components/ConditionalRendering";
 import NameList from "./components/NameList";
 // import StylesInReact from "./components/StylesInReact";
 import styles from "./CSS_Style.module.css";
-
-
-
-
-
-
-
+import FormHandling from "./components/FormHandling";
+import FragmentDemo from "./components/FragmentDemo";
+import TableFragment from "./components/TableFragment";
+import Pure_Component from "./components/Pure_Component";
+import Diff_Pure_Regu from "./components/Diff_Pure_Regu";
+import MemoParent from "./components/MemoParent";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -67,7 +66,21 @@ function App() {
         {/* Styles in React */}
         {/* <StylesInReact /> */}
         {/* Css Modules */}
-        <h1 className={styles.success}>Success</h1>
+        {/* <h1 className={styles.success}>Success</h1> */}
+
+        {/* Form Handling in React */}
+        {/* <FormHandling /> */}
+
+        {/* Fragment in React */}
+        {/* <FragmentDemo /> */}
+        {/* <TableFragment /> */}
+
+        {/* Practice on Pure Component */}
+        {/* <Pure_Component /> */}
+        {/* <Diff_Pure_Regu /> */}
+
+        {/* Memo Practice */}
+        <MemoParent />
       </div>
     </>
   );
