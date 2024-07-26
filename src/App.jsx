@@ -14,6 +14,8 @@ import TableFragment from "./components/TableFragment";
 import Pure_Component from "./components/Pure_Component";
 import Diff_Pure_Regu from "./components/Diff_Pure_Regu";
 import MemoParent from "./components/MemoParent";
+import RefsReact from "./components/RefsReact";
+import ForwadingRefs from "./components/ForwadingRefs";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -80,7 +82,12 @@ function App() {
         {/* <Diff_Pure_Regu /> */}
 
         {/* Memo Practice */}
-        <MemoParent />
+        {/* <MemoParent /> */}
+
+        {/* Use of useRef hook */}
+        {/* <RefsReact /> */}
+        {/* Forwading useRef */}
+        <ForwadingRefs />
       </div>
     </>
   );
