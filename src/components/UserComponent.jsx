@@ -1,3 +1,5 @@
+// Custom  Hook in react.js : which uses component as argument and return new component
+
 import React from "react";
 
 const UserComponent = ({ data }) => {
