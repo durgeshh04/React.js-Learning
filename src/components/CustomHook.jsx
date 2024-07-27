@@ -8,7 +8,7 @@ import Loading from "./Loading";
 const fetchUserData = async () => {
   return new Promise((resolve) => {
     setInterval(() => {
-      resolve({ name: "John Doe", email: "john.doe@example.com" });
+      resolve({ name: "Durgesh Chaudhari", email: "durgeshchaudhari199@gmail.com" });
     }, 2000);
   });
 };
