@@ -18,6 +18,7 @@ import RefsReact from "./components/RefsReact";
 import ForwadingRefs from "./components/ForwadingRefs";
 import PortalsReact from "./components/PortalsReact";
 import CustomHook from "./components/CustomHook";
+import ParentPattern from "./components/ParentPattern";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -94,8 +95,15 @@ function App() {
         {/* Portals in React */}
         {/* <PortalsReact /> */}
 
+        {/* Custom Hooks: Encapsulate reusable logic in hooks, allowing you to share functionality between different functional components without altering the component hierarchy. This is often the preferred method in modern React development.
+        --------------------------------------------------------------------------
+        Children as a Function: This pattern allows you to pass a function as a child to a component, similar to render props, and is a straightforward way to share rendering logic. */}
+
         {/* Custome Hooks */}
-        <CustomHook />
+        {/* <CustomHook /> */}
+
+        {/* Alternate for Custom Hooks is Children as a Function Pattern */}
+        <ParentPattern />
       </div>
     </>
   );
