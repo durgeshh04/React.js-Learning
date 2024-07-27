@@ -17,6 +17,7 @@ import MemoParent from "./components/MemoParent";
 import RefsReact from "./components/RefsReact";
 import ForwadingRefs from "./components/ForwadingRefs";
 import PortalsReact from "./components/PortalsReact";
+import CustomHook from "./components/CustomHook";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -91,7 +92,10 @@ function App() {
         {/* <ForwadingRefs /> */}
 
         {/* Portals in React */}
-        <PortalsReact />
+        {/* <PortalsReact /> */}
+
+        {/* Custome Hooks */}
+        <CustomHook />
       </div>
     </>
   );
