@@ -22,6 +22,7 @@ import ParentPattern from "./components/ParentPattern";
 import { UserProvider } from "./components/UserContext";
 import ThemeConsumer from "./components/ThemeConsumer";
 import HTTPHandling from "./components/HTTPHandling";
+import HTTPHandlingPost from "./components/HTTPHandlingPost";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -117,9 +118,10 @@ function App() {
           <ThemeConsumer />
         </UserProvider> */}
 
-
-        {/* HTTP Request in React.js */}
-        <HTTPHandling />
+        {/* HTTP Get Request in React.js */}
+        {/* <HTTPHandling /> */}
+        {/* HTTP POST Request in React.js */}
+        <HTTPHandlingPost />
       </div>
     </>
   );
