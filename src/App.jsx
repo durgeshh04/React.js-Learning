@@ -23,6 +23,8 @@ import { UserProvider } from "./components/UserContext";
 import ThemeConsumer from "./components/ThemeConsumer";
 import HTTPHandling from "./components/HTTPHandling";
 import HTTPHandlingPost from "./components/HTTPHandlingPost";
+import HTTPHandlingDelete from "./components/HTTPHandlingDelete";
+import HTTPHandlingPut from "./components/HTTPHandlingPut";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -121,7 +123,11 @@ function App() {
         {/* HTTP Get Request in React.js */}
         {/* <HTTPHandling /> */}
         {/* HTTP POST Request in React.js */}
-        <HTTPHandlingPost />
+        {/* <HTTPHandlingPost /> */}
+        {/* HTTP DELETE Request in React.js */}
+        {/* <HTTPHandlingDelete/> */}
+        {/* HTTP PUT Request in React.js */}
+        <HTTPHandlingPut />
       </div>
     </>
   );
