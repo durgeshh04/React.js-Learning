@@ -19,8 +19,8 @@ import ForwadingRefs from "./components/ForwadingRefs";
 import PortalsReact from "./components/PortalsReact";
 import CustomHook from "./components/CustomHook";
 import ParentPattern from "./components/ParentPattern";
-import ComponentC from "./components/ComponentC";
 import { UserProvider } from "./components/UserContext";
+import ThemeConsumer from "./components/ThemeConsumer";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -108,8 +108,12 @@ function App() {
         {/* <ParentPattern /> */}
 
         {/* Context API */}
-        <UserProvider value="Durgesh">
+        {/* <UserProvider value="Durgesh">
           <ComponentC />
+        </UserProvider> */}
+        {/* Another Example of useContext API */}
+        <UserProvider>
+          <ThemeConsumer />
         </UserProvider>
       </div>
     </>
