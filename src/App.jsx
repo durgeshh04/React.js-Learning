@@ -21,6 +21,7 @@ import CustomHook from "./components/CustomHook";
 import ParentPattern from "./components/ParentPattern";
 import { UserProvider } from "./components/UserContext";
 import ThemeConsumer from "./components/ThemeConsumer";
+import HTTPHandling from "./components/HTTPHandling";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -112,9 +113,13 @@ function App() {
           <ComponentC />
         </UserProvider> */}
         {/* Another Example of useContext API */}
-        <UserProvider>
+        {/* <UserProvider>
           <ThemeConsumer />
-        </UserProvider>
+        </UserProvider> */}
+
+
+        {/* HTTP Request in React.js */}
+        <HTTPHandling />
       </div>
     </>
   );
