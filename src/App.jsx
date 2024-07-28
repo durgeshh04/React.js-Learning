@@ -127,7 +127,14 @@ function App() {
         {/* HTTP DELETE Request in React.js */}
         {/* <HTTPHandlingDelete/> */}
         {/* HTTP PUT Request in React.js */}
-        <HTTPHandlingPut />
+        {/* <HTTPHandlingPut /> */}
+
+        {/* Difference between Destructuring  or No-Destructuring  */}
+        {/* Destructuring */}
+        {/* This syntax uses destructuring to directly extract the names property from the props object passed to the function. It is useful when you want to directly access specific properties of an object passed as an argument. */}
+        {/* --------------------------------- */}
+        {/* No-Destructuring */}
+        {/* This syntax does not use destructuring. The entire props object is passed to the function. You then access properties of the props object within the function. */}
       </div>
     </>
   );
