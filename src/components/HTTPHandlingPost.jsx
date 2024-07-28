@@ -23,6 +23,11 @@ const HTTPHandlingPost = () => {
           </label>
           <input className="input-tag" type="text" id="body" name="body" />
         </div>
+        <div className="input-group button-group">
+          <button className="btn" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
