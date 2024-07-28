@@ -19,6 +19,8 @@ import ForwadingRefs from "./components/ForwadingRefs";
 import PortalsReact from "./components/PortalsReact";
 import CustomHook from "./components/CustomHook";
 import ParentPattern from "./components/ParentPattern";
+import ComponentC from "./components/ComponentC";
+import { UserProvider } from "./components/UserContext";
 function App() {
   // Basic understanding of how to send props to the component
   // const names = {
@@ -103,7 +105,12 @@ function App() {
         {/* <CustomHook /> */}
 
         {/* Alternate for Custom Hooks is Children as a Function Pattern */}
-        <ParentPattern />
+        {/* <ParentPattern /> */}
+
+        {/* Context API */}
+        <UserProvider value="Durgesh">
+          <ComponentC />
+        </UserProvider>
       </div>
     </>
   );
