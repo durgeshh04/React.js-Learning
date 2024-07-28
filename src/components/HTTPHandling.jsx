@@ -1,3 +1,5 @@
+// Handling get request using axios and fetch 
+
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 

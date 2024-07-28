@@ -1,3 +1,5 @@
+// Reder as props -> Children as a function
+
 import React, { useState, useEffect, Children } from "react";
 
 const ChildrenPattern = ({children}) => {

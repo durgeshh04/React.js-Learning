@@ -1,3 +1,5 @@
+// React useContext Hook: userContext.jsx to ThemeConsumer.jsx
+
 import React, { useContext } from "react";
 import { UserContext } from "./UserContext";
 
