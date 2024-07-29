@@ -1,5 +1,6 @@
 import "./App.css";
 import UseEffectOne from "./components/Hooks/UseEffectOne";
+import UseEffectTwo from "./components/Hooks/UseEffectTwo";
 // import Greet from "./components/Greet";
 // import Welcome from "./components/Welcome";
 // import StateHook from "./components/StateHook";
@@ -121,13 +122,13 @@ function App() {
         {/* This syntax does not use destructuring. The entire props object is passed to the function. You then access properties of the props object within the function. */}
 
         {/* ----------------------------------HOOKS----------------------------------------- */}
-        
+
         {/* useState Hook */}
         {/* <UseState /> */}
 
         {/* useEffect Hook */}
-
-        <UseEffectOne />
+        {/* <UseEffectOne /> */}
+        <UseEffectTwo />
       </div>
     </>
   );
