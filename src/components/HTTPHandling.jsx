@@ -45,7 +45,7 @@ const HTTPHandling = () => {
         {posts.map((post) => (
           <li key={post.id}>{post.title}</li>
         ))}
-      </ul>{" "}
+      </ul>
     </div>
   );
 };
