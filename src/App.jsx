@@ -1,5 +1,6 @@
 import "./App.css";
 import FetchingData from "./components/Hooks/FetchingData";
+import UseContextHook from "./components/Hooks/UseContextHook";
 import UseEffectOne from "./components/Hooks/UseEffectOne";
 import UseEffectTimer from "./components/Hooks/UseEffectTimer";
 import UseEffectTwo from "./components/Hooks/UseEffectTwo";
@@ -133,7 +134,10 @@ function App() {
         {/* <UseEffectTwo /> */}
         {/* <UseEffectTimer /> */}
         {/* Fetching Data */}
-        <FetchingData />
+        {/* <FetchingData /> */}
+
+        {/* useContext Hook */}
+        <UseContextHook />
       </div>
     </>
   );

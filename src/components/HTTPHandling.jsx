@@ -7,35 +7,29 @@ const HTTPHandling = () => {
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
-    axios
-      .get("https://jsonplaceholder.typicode.com/posts")
-      .then((response) => {
-        console.log(response);
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get("https://jsonplaceholder.typicode.com/posts");
         setPosts(response.data);
         setIsLoading(false);
-      })  
-      .catch((error) => {
-        console.log(error.message);
+      } catch (error) {
+        console.error("Error fetching posts:", error.message);
         setError(error.message);
         setIsLoading(false);
-      });
+      }
+    };
+
+    fetchPosts();
   }, []);
 
   if (isLoading) {
-    return (
-      <div>
-        <b>Loading...</b>
-      </div>
-    );
+    return <div><b>Loading...</b></div>;
   }
 
   if (error) {
-    return (
-      <div>
-        <b>Something is wrong...</b>
-      </div>
-    );
+    return <div><b>Error: {error}</b></div>;
   }
 
   return (
@@ -52,20 +46,23 @@ const HTTPHandling = () => {
 
 export default HTTPHandling;
 
-
-
 // This is another method to fetch data using fetch 
-// Difference between axios and fetch is : fetch needs to convet the data into json file axios don't
+// Difference between axios and fetch is: fetch needs to convert the data into json file, axios doesn't
 
-// fetch("https://jsonplaceholder.typicode.com/posts")
-//       .then((response) => response.json())
-//       .then((data) => {
-//         console.log(data);
-//         setPosts(data);
-//         setIsLoading(false);
-//       })
-//       .catch((error) => {
-//         console.log(error.message);
-//         setError(error.message);
-//         setIsLoading(false);
-//       });
+/*
+const fetchPosts = async () => {
+  try {
+    const response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    setPosts(data);
+    setIsLoading(false);
+  } catch (error) {
+    console.error("Error fetching posts:", error.message);
+    setError(error.message);
+    setIsLoading(false);
+  }
+};
+*/
