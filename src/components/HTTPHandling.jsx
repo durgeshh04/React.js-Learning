@@ -14,7 +14,7 @@ const HTTPHandling = () => {
         console.log(response);
         setPosts(response.data);
         setIsLoading(false);
-      })
+      })  
       .catch((error) => {
         console.log(error.message);
         setError(error.message);
