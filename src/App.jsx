@@ -1,5 +1,7 @@
 import "./App.css";
+import FetchingData from "./components/Hooks/FetchingData";
 import UseEffectOne from "./components/Hooks/UseEffectOne";
+import UseEffectTimer from "./components/Hooks/UseEffectTimer";
 import UseEffectTwo from "./components/Hooks/UseEffectTwo";
 // import Greet from "./components/Greet";
 // import Welcome from "./components/Welcome";
@@ -128,7 +130,10 @@ function App() {
 
         {/* useEffect Hook */}
         {/* <UseEffectOne /> */}
-        <UseEffectTwo />
+        {/* <UseEffectTwo /> */}
+        {/* <UseEffectTimer /> */}
+        {/* Fetching Data */}
+        <FetchingData />
       </div>
     </>
   );

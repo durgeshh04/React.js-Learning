@@ -41,6 +41,7 @@ const UseEffectOne = () => {
     console.log("useEffect called");
     window.addEventListener('mousemove', handleMouse);
 
+    // Cleanup code 
     return (()=>{
       window.removeEventListener('mousemove', handleMouse)
     })
