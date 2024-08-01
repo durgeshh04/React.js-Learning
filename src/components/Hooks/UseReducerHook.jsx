@@ -123,37 +123,95 @@
 // export default UseReducerHook;
 
 // {----------------------useReducer with useContext Hook-------------------}
-import React, { useReducer } from "react";
-import ComponentA from "./ComponentA";
-import ComponentB from "./ComponentB";
-import ComponentD from "./ComponentD";
+// import React, { useReducer } from "react";
+// import ComponentA from "./ComponentA";
+// import ComponentB from "./ComponentB";
+// import ComponentD from "./ComponentD";
 
-const initialState = 0;
+// const initialState = 0;
+// const reducer = (state, action) => {
+//   switch (action) {
+//     case "increament":
+//       return state + 1;
+//     case "decreament":
+//       return state - 1;
+//     case "reset":
+//       return initialState;
+//     default:
+//       return state;
+//   }
+// };
+// export const countContext = React.createContext();
+// const UseReducerHook = () => {
+//   const [count, dispatch] = useReducer(reducer, initialState);
+//   return (
+//     <div>
+//       <h1>Original Count Value: {count}</h1>
+//       <countContext.Provider
+//         value={{ countValue: count, dispatchValue: dispatch }}
+//       >
+//         <ComponentA />
+//         <ComponentB />
+//         <ComponentD />
+//       </countContext.Provider>
+//     </div>
+//   );
+// };
+
+// export default UseReducerHook;
+
+// {------------------------useEffect hook with useReducer hook to fetch the data----------------------------}
+import axios from "axios";
+import React, { useEffect, useReducer } from "react";
+
+const initialState = {
+  isLoading: true,
+  error: null,
+  post: {},
+};
+
 const reducer = (state, action) => {
-  switch (action) {
-    case "increament":
-      return state + 1;
-    case "decreament":
-      return state - 1;
-    case "reset":
-      return initialState;
+  switch (action.type) {
+    case "fetch_success":
+      return {
+        isLoading: false,
+        post: action.payload,
+      };
+    case "fetch_error":
+      return {
+        isLoading: false,
+        post: {},
+        error: "Something went wrong",
+      };
     default:
       return state;
   }
 };
-export const countContext = React.createContext();
+
 const UseReducerHook = () => {
-  const [count, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        await axios
+          .get("https://jsonplaceholder.typicode.com/posts/1")
+          .then((response) => {
+            dispatch({ type: "fetch_success", payload: response.data });
+          })
+          .catch(() => {
+            dispatch({ type: "fetch_error" });
+          });
+      } catch (error) {
+        console.log("Error while fetching data", error);
+      }
+    };
+    fetchData();
+  }, []);
+
   return (
     <div>
-      <h1>Original Count Value: {count}</h1>
-      <countContext.Provider
-        value={{ countValue: count, dispatchValue: dispatch }}
-      >
-        <ComponentA />
-        <ComponentB />
-        <ComponentD />
-      </countContext.Provider>
+      {state.isLoading ? "Loading..." : state.post.title}
+      {state.error ? state.error : null}
     </div>
   );
 };

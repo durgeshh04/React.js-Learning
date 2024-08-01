@@ -1,5 +1,6 @@
 import "./App.css";
 import FetchingData from "./components/Hooks/FetchingData";
+import UseCallback from "./components/Hooks/UseCallback";
 import UseContextHook from "./components/Hooks/UseContextHook";
 import UseEffectOne from "./components/Hooks/UseEffectOne";
 import UseEffectTimer from "./components/Hooks/UseEffectTimer";
@@ -141,7 +142,10 @@ function App() {
         {/* <UseContextHook /> */}
 
         {/* useReducer Hook */}
-        <UseReducerHook />
+        {/* <UseReducerHook /> */}
+
+        {/* useCallback Hook */}
+        <UseCallback />
       </div>
     </>
   );
