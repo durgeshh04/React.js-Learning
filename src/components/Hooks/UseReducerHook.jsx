@@ -84,7 +84,49 @@
 // export default UseReducerHook;
 
 // {--------------------Multiple useReducer Hook----------------------------}
+// import React, { useReducer } from "react";
+
+// const initialState = 0;
+// const reducer = (state, action) => {
+//   switch (action) {
+//     case "increament":
+//       return state + 1;
+//     case "decreament":
+//       return state - 1;
+//     case "reset":
+//       return initialState;
+//     default:
+//       return state;
+//   }
+// };
+// const UseReducerHook = () => {
+//   const [count, dispatch] = useReducer(reducer, initialState);
+//   const [countTwo, dispatchTwo] = useReducer(reducer, initialState);
+//   return (
+//     <>
+//       <div>
+//         <h1>Count: {count}</h1>
+//         <button onClick={() => dispatch("increament")}>Increament</button>
+//         <button onClick={() => dispatch("decreament")}>Decreament</button>
+//         <button onClick={() => dispatch("reset")}>Reset</button>
+//       </div>
+//       <div>
+//         <h1>Count: {countTwo}</h1>
+//         <button onClick={() => dispatchTwo("increament")}>Increament</button>
+//         <button onClick={() => dispatchTwo("decreament")}>Decreament</button>
+//         <button onClick={() => dispatchTwo("reset")}>Reset</button>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default UseReducerHook;
+
+// {----------------------useReducer with useContext Hook-------------------}
 import React, { useReducer } from "react";
+import ComponentA from "./ComponentA";
+import ComponentB from "./ComponentB";
+import ComponentD from "./ComponentD";
 
 const initialState = 0;
 const reducer = (state, action) => {
@@ -99,24 +141,20 @@ const reducer = (state, action) => {
       return state;
   }
 };
+export const countContext = React.createContext();
 const UseReducerHook = () => {
   const [count, dispatch] = useReducer(reducer, initialState);
-  const [countTwo, dispatchTwo] = useReducer(reducer, initialState);
   return (
-    <>
-      <div>
-        <h1>Count: {count}</h1>
-        <button onClick={() => dispatch("increament")}>Increament</button>
-        <button onClick={() => dispatch("decreament")}>Decreament</button>
-        <button onClick={() => dispatch("reset")}>Reset</button>
-      </div>
-      <div>
-        <h1>Count: {countTwo}</h1>
-        <button onClick={() => dispatchTwo("increament")}>Increament</button>
-        <button onClick={() => dispatchTwo("decreament")}>Decreament</button>
-        <button onClick={() => dispatchTwo("reset")}>Reset</button>
-      </div>
-    </>
+    <div>
+      <h1>Original Count Value: {count}</h1>
+      <countContext.Provider
+        value={{ countValue: count, dispatchValue: dispatch }}
+      >
+        <ComponentA />
+        <ComponentB />
+        <ComponentD />
+      </countContext.Provider>
+    </div>
   );
 };
 
