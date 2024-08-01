@@ -4,6 +4,7 @@ import UseContextHook from "./components/Hooks/UseContextHook";
 import UseEffectOne from "./components/Hooks/UseEffectOne";
 import UseEffectTimer from "./components/Hooks/UseEffectTimer";
 import UseEffectTwo from "./components/Hooks/UseEffectTwo";
+import UseReducerHook from "./components/Hooks/UseReducerHook";
 // import Greet from "./components/Greet";
 // import Welcome from "./components/Welcome";
 // import StateHook from "./components/StateHook";
@@ -137,7 +138,10 @@ function App() {
         {/* <FetchingData /> */}
 
         {/* useContext Hook */}
-        <UseContextHook />
+        {/* <UseContextHook /> */}
+
+        {/* useReducer Hook */}
+        <UseReducerHook />
       </div>
     </>
   );
