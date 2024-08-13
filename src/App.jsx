@@ -1,4 +1,5 @@
 import "./App.css";
+import CustomeOne from "./components/Hooks/CustomeOne";
 import FetchingData from "./components/Hooks/FetchingData";
 import UseCallback from "./components/Hooks/UseCallback";
 import UseContextHook from "./components/Hooks/UseContextHook";
@@ -155,7 +156,10 @@ function App() {
 
         {/* useRef Hook */}
         {/* <UseRef /> */}
-        <UseRef2 />
+        {/* <UseRef2 /> */}
+
+        {/* Custome Hooks */}
+        <CustomeOne />
       </div>
     </>
   );
