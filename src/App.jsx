@@ -11,6 +11,8 @@ import UseMemo from "./components/Hooks/UseMemo";
 import UseReducerHook from "./components/Hooks/UseReducerHook";
 import UseRef from "./components/Hooks/UseRef";
 import UseRef2 from "./components/Hooks/UseRef2";
+import CustomCounterOne from "./components/Hooks/CustomCounterOne";
+import CustomCounterTwo from "./components/Hooks/CustomCounterTwo";
 // import Greet from "./components/Greet";
 // import Welcome from "./components/Welcome";
 // import StateHook from "./components/StateHook";
@@ -160,8 +162,10 @@ function App() {
         {/* <UseRef2 /> */}
 
         {/* Custome Hooks */}
-        <CustomeOne />
-        <CustomeTwo />
+        {/* <CustomeOne />
+        <CustomeTwo /> */}
+        <CustomCounterOne />
+        <CustomCounterTwo />
       </div>
     </>
   );

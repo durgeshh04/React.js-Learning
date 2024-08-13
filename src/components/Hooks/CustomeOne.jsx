@@ -1,15 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, {useState} from "react";
+import DocumentTitle from "./DocumentTitle";
 
 const CustomeOne = () => {
   const [count, setCount] = useState(0);
-  useEffect(() => {
-    document.title = `Count ${count}`;
-  }, [count]);
+  DocumentTitle(count);
 
   return (
     <div>
       <button onClick={() => setCount((prevCount) => prevCount + 1)}>
-        Count {count}
+        Count- {count}
       </button>
     </div>
   );
