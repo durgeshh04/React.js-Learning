@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import useCounter from "./useCounter";
 
 const CustomCounterTwo = () => {
-  const [counter, Increament, Decreament, Reset] = useCounter();
+  const [counter, Increament, Decreament, Reset] = useCounter(10, 10);
   return (
     <div>
       <h1>Counter- {counter}</h1>

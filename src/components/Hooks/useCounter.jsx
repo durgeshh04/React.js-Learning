@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
-const useCounter = () => {
-  const [counter, setCounter] = useState(0);
+const useCounter = (intialCounter = 0, value) => {
+  const [counter, setCounter] = useState(intialCounter, value);
   const Increament = () => {
-    setCounter((prevCounter) => prevCounter + 1);
+    setCounter((prevCounter) => prevCounter + value);
   };
   const Decreament = () => {
-    setCounter((prevCounter) => prevCounter - 1);
+    setCounter((prevCounter) => prevCounter - value);
   };
   const Reset = () => {
-    setCounter(0);
+    setCounter(intialCounter);
   };
 
   return [counter, Increament, Decreament, Reset];
