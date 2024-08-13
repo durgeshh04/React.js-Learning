@@ -7,6 +7,8 @@ import UseEffectTimer from "./components/Hooks/UseEffectTimer";
 import UseEffectTwo from "./components/Hooks/UseEffectTwo";
 import UseMemo from "./components/Hooks/UseMemo";
 import UseReducerHook from "./components/Hooks/UseReducerHook";
+import UseRef from "./components/Hooks/UseRef";
+import UseRef2 from "./components/Hooks/UseRef2";
 // import Greet from "./components/Greet";
 // import Welcome from "./components/Welcome";
 // import StateHook from "./components/StateHook";
@@ -149,7 +151,11 @@ function App() {
         {/* <UseCallback /> */}
 
         {/* useMemo Hook */}
-        <UseMemo />
+        {/* <UseMemo /> */}
+
+        {/* useRef Hook */}
+        {/* <UseRef /> */}
+        <UseRef2 />
       </div>
     </>
   );
