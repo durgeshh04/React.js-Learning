@@ -1,4 +1,5 @@
 import "./App.css";
+import CustomeTwo from "./components/Hooks/CustomeTwo";
 import CustomeOne from "./components/Hooks/CustomeOne";
 import FetchingData from "./components/Hooks/FetchingData";
 import UseCallback from "./components/Hooks/UseCallback";
@@ -160,6 +161,7 @@ function App() {
 
         {/* Custome Hooks */}
         <CustomeOne />
+        <CustomeTwo />
       </div>
     </>
   );
