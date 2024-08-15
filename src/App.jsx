@@ -13,6 +13,7 @@ import UseRef from "./components/Hooks/UseRef";
 import UseRef2 from "./components/Hooks/UseRef2";
 import CustomCounterOne from "./components/Hooks/CustomCounterOne";
 import CustomCounterTwo from "./components/Hooks/CustomCounterTwo";
+import CustomForm from "./components/Hooks/CustomForm";
 // import Greet from "./components/Greet";
 // import Welcome from "./components/Welcome";
 // import StateHook from "./components/StateHook";
@@ -164,8 +165,9 @@ function App() {
         {/* Custome Hooks */}
         {/* <CustomeOne />
         <CustomeTwo /> */}
-        <CustomCounterOne />
-        <CustomCounterTwo />
+        {/* <CustomCounterOne />
+        <CustomCounterTwo /> */}
+        <CustomForm />
       </div>
     </>
   );
