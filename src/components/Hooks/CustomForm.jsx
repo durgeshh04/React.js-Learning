@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import useInput from "./useInput";
 
 const CustomForm = () => {
