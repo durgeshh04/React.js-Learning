@@ -4,7 +4,8 @@ import { DevTool } from "@hookform/devtools";
 let renderCount = 0;
 const ReactFormHook = () => {
   const form = useForm();
-  const { register, control, handleSubmit } = form;
+  const { register, control, handleSubmit, formState } = form;
+  const { errors } = formState;
 
   const formContainerStyle = {
     display: "flex",
@@ -81,6 +82,7 @@ const ReactFormHook = () => {
             })}
             style={inputStyle}
           />
+          <span style={{ color: "red" }}>{errors.username?.message}</span>
         </div>
         <div style={formGroupStyle}>
           <label htmlFor="email" style={labelStyle}>
@@ -96,12 +98,27 @@ const ReactFormHook = () => {
                 message: "Email is required",
               },
               pattern: {
-                value: /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+                value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/,
                 message: "Invalid Gmail address",
+              },
+              validate: {
+                notField: (fieldValue) => {
+                  return (
+                    fieldValue !== "admin@gmail.com" ||
+                    "This email is not allowed..."
+                  );
+                },
+                notBlackListed: (fieldValue) => {
+                  return (
+                    !fieldValue.endsWith("pom.com") ||
+                    "This email is Illigle to enter"
+                  );
+                },
               },
             })}
             style={inputStyle}
           />
+          <span style={{ color: "red" }}>{errors.email?.message}</span>
         </div>
         <div style={formGroupStyle}>
           <label htmlFor="channel" style={labelStyle}>
@@ -119,6 +136,7 @@ const ReactFormHook = () => {
             })}
             style={inputStyle}
           />
+          <span style={{ color: "red" }}>{errors.channel?.message}</span>
         </div>
         <button type="submit" style={buttonStyle}>
           Submit
