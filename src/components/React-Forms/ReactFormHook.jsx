@@ -3,7 +3,22 @@ import { DevTool } from "@hookform/devtools";
 
 let renderCount = 0;
 const ReactFormHook = () => {
-  const form = useForm();
+  const form = useForm({
+    // defaultValues:{
+    //   username: 'Batman',
+    //   email: '',
+    //   channel: '',
+    // }
+
+    defaultValues: async()=>{
+      const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+      const data = await response.json();
+      return{
+        username: data.username,
+        email: data.email
+      }
+    }
+  });
   const { register, control, handleSubmit, formState } = form;
   const { errors } = formState;
 
@@ -146,5 +161,6 @@ const ReactFormHook = () => {
     </div>
   );
 };
+
 
 export default ReactFormHook;
