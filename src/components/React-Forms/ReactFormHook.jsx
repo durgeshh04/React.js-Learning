@@ -10,23 +10,34 @@ const ReactFormHook = () => {
     //   channel: '',
     // }
 
-    defaultValues: async()=>{
-      const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    defaultValues: async () => {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/users/1"
+      );
       const data = await response.json();
-      return{
+      return {
         username: data.username,
-        email: data.email
-      }
-    }
+        email: data.email,
+        channel: "",
+        social: {
+          twitter: "",
+          facebook: "",
+        },
+        phoneNumber: ["", ""],
+        address: {
+          address1: "",
+        }
+      };
+    },
   });
   const { register, control, handleSubmit, formState } = form;
-  const { errors } = formState;
+  const { errors, isSubmitting } = formState;
 
   const formContainerStyle = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "87vh",
+    height: "100vh",
     backgroundColor: "#f0f0f0",
   };
 
@@ -76,6 +87,7 @@ const ReactFormHook = () => {
   renderCount++;
 
   const onSubmit = (data) => {
+    if (isSubmitting) return;
     console.log("Data Submitted Successfully", data);
   };
 
@@ -153,7 +165,84 @@ const ReactFormHook = () => {
           />
           <span style={{ color: "red" }}>{errors.channel?.message}</span>
         </div>
-        <button type="submit" style={buttonStyle}>
+
+        <div style={formGroupStyle}>
+          <label htmlFor="twitter" style={labelStyle}>
+            Twitter
+          </label>
+          <input
+            type="text"
+            placeholder="Enter your Twitter handle"
+            id="twitter"
+            {...register("social.twitter", {
+              required: {
+                value: true,
+                message: "Please enter twitter details"
+              }
+            })}
+            style={inputStyle}
+          />
+           <span style={{ color: "red" }}>
+            {errors.social?.twitter?.message}
+          </span>
+        </div>
+
+        <div style={formGroupStyle}>
+          <label htmlFor="facebook" style={labelStyle}>
+            Facebook
+          </label>
+          <input
+            type="text"
+            placeholder="Enter your Facebook profile"
+            id="facebook"
+            {...register("social.facebook", {
+              required: {
+                value: true,
+                message: "Please enter facebook details"
+              }
+            })}
+            style={inputStyle}
+          />
+          <span style={{ color: "red" }}>
+            {errors.social?.facebook?.message}
+          </span>
+        </div>
+
+        <div style={formGroupStyle}>
+          <label htmlFor="primary-number" style={labelStyle}>
+            Primary Number
+          </label>
+          <input
+            type="text"
+            placeholder="Enter your primary phone number"
+            id="primary-number"
+            {...register("phoneNumber.0", {
+              required: {
+                value: true,
+                message: "Please enter phone number here.",
+              },
+            })}
+            style={inputStyle}
+          />
+          <span style={{ color: "red" }}>
+            {errors.phoneNumber?.[0]?.message}
+          </span>
+        </div>
+
+        <div style={formGroupStyle}>
+          <label htmlFor="secondary-number" style={labelStyle}>
+            Secondary Number
+          </label>
+          <input
+            type="text"
+            placeholder="Enter your Facebook profile"
+            id="secondary-number"
+            {...register("phoneNumber.1")}
+            style={inputStyle}
+          />
+        </div>
+
+        <button type="submit" style={buttonStyle} disabled={isSubmitting}>
           Submit
         </button>
       </form>
@@ -161,6 +250,5 @@ const ReactFormHook = () => {
     </div>
   );
 };
-
 
 export default ReactFormHook;
