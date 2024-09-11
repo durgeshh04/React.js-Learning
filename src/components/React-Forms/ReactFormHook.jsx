@@ -24,9 +24,8 @@ const ReactFormHook = () => {
           facebook: "",
         },
         phoneNumber: ["", ""],
-        address: {
-          address1: "",
-        }
+        age: 0,
+        dob: "",
       };
     },
   });
@@ -177,12 +176,12 @@ const ReactFormHook = () => {
             {...register("social.twitter", {
               required: {
                 value: true,
-                message: "Please enter twitter details"
-              }
+                message: "Please enter twitter details",
+              },
             })}
             style={inputStyle}
           />
-           <span style={{ color: "red" }}>
+          <span style={{ color: "red" }}>
             {errors.social?.twitter?.message}
           </span>
         </div>
@@ -198,8 +197,8 @@ const ReactFormHook = () => {
             {...register("social.facebook", {
               required: {
                 value: true,
-                message: "Please enter facebook details"
-              }
+                message: "Please enter facebook details",
+              },
             })}
             style={inputStyle}
           />
@@ -240,6 +239,46 @@ const ReactFormHook = () => {
             {...register("phoneNumber.1")}
             style={inputStyle}
           />
+        </div>
+
+        <div style={formGroupStyle}>
+          <label htmlFor="age" style={labelStyle}>
+            age:
+          </label>
+          <input
+            type="number"
+            placeholder="Enter Your age"
+            id="age"
+            {...register("age", {
+              valueAsNumber: true,
+              required: {
+                value: true,
+                message: "age is required",
+              },
+            })}
+            style={inputStyle}
+          />
+          <span style={{ color: "red" }}>{errors.age?.message}</span>
+        </div>
+
+        <div style={formGroupStyle}>
+          <label htmlFor="dob" style={labelStyle}>
+            DOB:
+          </label>
+          <input
+            type="date"
+            placeholder="Enter Your dob"
+            id="dob"
+            {...register("dob", {
+              valueAsDate: true,
+              required: {
+                value: true,
+                message: "dob is required",
+              },
+            })}
+            style={inputStyle}
+          />
+          <span style={{ color: "red" }}>{errors.dob?.message}</span>
         </div>
 
         <button type="submit" style={buttonStyle} disabled={isSubmitting}>
